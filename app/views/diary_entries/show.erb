@@ -1,0 +1,16 @@
+<h3><%= @diary_entry.title %></h3>
+<p><%= @diary_entry.content %></p>
+
+<p>Created by: <%= @diary_entry.user.name %></p>
+
+<p>created on <%= @diary_entry.formatted_created_at %></p>
+
+
+<% if authorized_to_edit?(@diary_entry) %>
+  <a href="/diary_entries/<%= @diary_entry.id %>/edit">Edit Entry</a>
+  <br><br>
+  <form class="" action="/diary_entries/<%= @diary_entry.id %>" method="post">
+    <input type="hidden" name="_method" value="DELETE">
+    <input type="submit" name="" value="Delete this Entry">
+  </form>
+<% end %>

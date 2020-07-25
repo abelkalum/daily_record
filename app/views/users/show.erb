@@ -1,3 +1,10 @@
-<h2><%= @user.name %>'s Show Page</h2>
+<!-- User's home page -->
+<p>
+Welcome, <%= @user.name %>! <br> <br>
+ 
+<a class="button" href="/diary_entries/new"> Create a new diary entry </a><br> <br>
+ 
+<a class="button" href="/diary_entries"> See your diary entries </a><br> <br>
 
-<h4>Email: <%= @user.email %></h4>
+<a class="button" href="/logout"> Log Out </a>
+</p>

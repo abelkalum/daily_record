@@ -6,7 +6,6 @@ class DiaryEntriesController < ApplicationController
   end
 
   get '/diary_entries/new' do
-    redirect_if_not_logged_in
     erb :'/diary_entries/new'
   end
 
