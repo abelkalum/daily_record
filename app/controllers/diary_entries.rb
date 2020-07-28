@@ -6,6 +6,7 @@ class DiaryEntriesController < ApplicationController
   end
 
   get '/diary_entries/new' do
+    redirect_if_not_logged_in
     erb :'/diary_entries/new'
   end
 
@@ -25,7 +26,6 @@ class DiaryEntriesController < ApplicationController
   end
 
   get '/diary_entries/:id/edit' do
-    redirect_if_not_logged_in
     set_diary_entry
     if authorized_to_edit?(@diary_entry)
       erb :'/diary_entries/edit'
