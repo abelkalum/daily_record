@@ -3,7 +3,7 @@
 
 <p>Created by: <%= @diary_entry.user.name %></p>
 
-<p>created on <%= @diary_entry.formatted_created_at %></p>
+<p>Created on <%= @diary_entry.formatted_created_at %></p>
 
 
 <% if authorized_to_edit?(@diary_entry) %>
@@ -14,3 +14,5 @@
     <input type="submit" name="" value="Delete this Entry">
   </form>
 <% end %>
+
+<a href="/">Back</a>
