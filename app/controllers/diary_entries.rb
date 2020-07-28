@@ -6,12 +6,10 @@ class DiaryEntriesController < ApplicationController
   end
 
   get '/diary_entries/new' do
-    redirect_if_not_logged_in
     erb :'/diary_entries/new'
   end
 
   post '/diary_entries' do
-    redirect_if_not_logged_in
     if params[:content] != ""
       @diary_entry = DiaryEntry.create(content: params[:content], user_id: current_user.id, title: params[:title])
       redirect "/diary_entries/#{@diary_entry.id}"
