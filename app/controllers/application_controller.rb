@@ -2,6 +2,9 @@ require './config/environment'
 
 class ApplicationController < Sinatra::Base
 
+  set :views, proc { File.join(root, '../views/') }
+  register Sinatra::Twitter::Bootstrap::Assets
+  
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
