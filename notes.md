@@ -10,7 +10,7 @@ Interface:
  ✔User can view diary entry form
  ✔User can submit a diary entry form
  ✔User can edit their diary entry
- ✔User can delete their diary entry
+ ✔User can delete or cancel their diary entry
 User class
  ✔attributes => name, email, password 
  ✔user signs up / logs in
