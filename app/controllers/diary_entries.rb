@@ -2,6 +2,7 @@ class DiaryEntriesController < ApplicationController
 
   get '/diary_entries' do
     @diary_entries = DiaryEntry.all
+    
     erb :'diary_entries/index'
   end
 
@@ -20,6 +21,8 @@ class DiaryEntriesController < ApplicationController
 
   get '/diary_entries/:id' do
     set_diary_entry
+    @diary_entry = DiaryEntry.find(params[:id])
+    
     erb :'/diary_entries/show'
   end
 
@@ -32,8 +35,7 @@ class DiaryEntriesController < ApplicationController
     end
   end
 
-  patch '/diary_entries/:id' do
-    redirect_if_not_logged_in
+  post '/diary_entries/:id' do
     set_diary_entry
     if @diary_entry.user == current_user && params[:content] != ""
       @diary_entry.update(content: params[:content])
@@ -47,7 +49,7 @@ class DiaryEntriesController < ApplicationController
     set_diary_entry
     if authorized_to_edit?(@diary_entry)
       @diary_entry.destroy
-      redirect '/diary_entries'
+      redirect '/diary_entries/show'
     else
       redirect '/diary_entries'
     end
