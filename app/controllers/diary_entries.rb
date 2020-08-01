@@ -49,9 +49,9 @@ class DiaryEntriesController < ApplicationController
     set_diary_entry
     if authorized_to_edit?(@diary_entry)
       @diary_entry.destroy
-      redirect '/diary_entries/show'
-    else
       redirect '/diary_entries'
+    else
+      redirect "users/#{current_user.id}"
     end
   end
 
