@@ -11,7 +11,7 @@ Specs: <br>
   ✔Ensure that users can't modify content created by other users<br>
   ✔Include user input validations<br>
  -BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)<br>
- -Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code<br>
+ ✔Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code<br>
 
 Confirm<br>
   ✔You have a large number of small Git commits<br>
