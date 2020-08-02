@@ -3,12 +3,12 @@
 
 <h1>Installation Instructions</h1>
 <p>
-Fork and clone this repo.
-Navigate to the app's root directory in your terminal.
-Inside the terminal, type bundle install, then rake db:migrate, then rake db:seed.
-Type shotgun in the terminal.
-On a web browser, navigate to http://localhost:9393/.
-Make an account, log in, then start creating entries.
+1. Fork and clone this repo.<br>
+2. Navigate to the app's root directory in your terminal.<br>
+3. Inside the terminal, type bundle install, then rake db:migrate, then rake db:seed.<br>
+4. Type shotgun in the terminal.<br>
+5. On a web browser, navigate to http://localhost:9393/.<br>
+6. Now make an account, log in, then start creating entries.<br>
 </p>
 <h1>Contributors’ Guide</h1>
 <p>Feel free to contribute!</p>
