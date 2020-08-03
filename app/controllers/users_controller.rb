@@ -1,5 +1,20 @@
 class UsersController < ApplicationController
 
+  get '/signup' do
+    erb :signup
+  end
+  
+  post '/signup' do
+    @user = User.new(params)
+    if @user.save
+      session[:user_id] = @user.id
+
+      redirect '/login'
+    else
+      redirect '/signup'
+    end
+  end
+  
   get '/login' do
     erb :login
   end
@@ -12,21 +27,6 @@ class UsersController < ApplicationController
       redirect "users/#{@user.id}"
     else
       redirect '/login'
-    end
-  end
-  
-  get '/signup' do
-    erb :signup
-  end
-
-  post '/signup' do
-    @user = User.new(params)
-    if @user.save
-      session[:user_id] = @user.id
-
-      redirect '/login'
-    else
-      redirect '/signup'
     end
   end
 

@@ -1,4 +1,4 @@
-All diary entries!
+<h2>All diary entries!</h2>
 <% @diary_entries.each do |diary_entry| %>
   <h4><a href="/diary_entries/<%= diary_entry.id %>"><%= diary_entry.created_at %></a></h4>
   <strong><%= diary_entry.title %></strong>
