@@ -16,6 +16,7 @@ class UsersController < ApplicationController
   end
   
   get '/login' do
+    redirect_if_logged_in
     erb :login
   end
 
