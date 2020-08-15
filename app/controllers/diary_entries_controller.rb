@@ -35,10 +35,11 @@ class DiaryEntriesController < ApplicationController
     end
   end
 
-  post '/diary_entries/:id' do
+  patch '/diary_entries/:id' do
     set_diary_entry
     if @diary_entry.user == current_user && params[:content] != ""
       @diary_entry.update(content: params[:content])
+      @diary_entry.update(title: params[:title])
       redirect "/diary_entries/#{@diary_entry.id}"
     else
       redirect "users/#{current_user.id}"
