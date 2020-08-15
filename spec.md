@@ -10,7 +10,7 @@ Specs: <br>
   X Ensure that the belongs_to resource has routes for Creating, Reading, Updating and Deleting … [a user has create, read, update, and delete routes]<br>
   X Ensure that users can't modify content created by other users … [The entries that don’t belong to the user will not show edit or delete links, but these links will be available to the user who owns the entries]<br>
   X Include user input validations … [user cannot create an entry which has no content]<br>
-  -BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new)<br>
+  X BONUS - not required - Display validation failures to user with error message (example form URL e.g. /posts/new) [added flash messages to display for invalid login, successful creation of an entry, and invalid creation of entry] <br>
   X Your README.md includes a short description, install instructions, a contributors guide and a link to the license for your code … [I added all the above README specs]
 
 
