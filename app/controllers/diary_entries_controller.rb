@@ -13,8 +13,11 @@ class DiaryEntriesController < ApplicationController
   post '/diary_entries' do
     if params[:content] != ""
       @diary_entry = DiaryEntry.create(content: params[:content], user_id: current_user.id, title: params[:title])
+      
+      flash[:message] = "Entry created successfully!"
       redirect "/diary_entries/#{@diary_entry.id}"
     else
+      flash[:errors] = "Ooops... you forgot to add content for your entry!"
       redirect '/diary_entries/new'
     end
   end
